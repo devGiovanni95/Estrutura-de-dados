@@ -1,0 +1,139 @@
+/*
+1-Ler	um	número	inteiro	e	imprimir	seu	sucessor	e	seu	antecessor.	
+*/
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese-brazilian");
+    
+    int numero, antecessor,sucessor;
+    printf("Digite um número inteiro: ");
+	scanf("%d", &numero);
+	
+	sucessor = numero+1;
+	antecessor = numero - 1;
+	
+	printf("O número escolhido foi %d\n", numero);
+	printf("O Seu sucessor é %d\n", sucessor);
+	printf("O Seu antecessor é %d\n", antecessor);
+
+    return 0;
+}
+
+
+
+/*
+2-Apresentar	 os	 quadrados	 dos	 números	 inteiros	 de	 15	 a	 200	 (CONSTRUA	 UM	
+PROGRAMA	UTILIZANDO	FOR	E	OUTRO	PROGRAMA	UTILIZANDO	O	WHILE).	
+*/
+
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese-brazilian");
+    
+    int numero, quadrado;
+
+	printf("\t\tUsando o for\n");
+	for(numero = 15; numero <= 200;numero++){
+		quadrado = numero * numero;
+		printf("O quadrado de %d = %d \n",numero,quadrado);
+	}
+
+	printf("\n\t\tUsando o while\n");
+
+	numero = 15;
+	while (numero<=200)
+	{
+		quadrado = numero * numero;
+		printf("O quadrado de %d = %d \n",numero,quadrado);
+		numero++;
+	}
+	
+
+    return 0;
+}
+
+
+/*
+ 3-Um	comerciante	comprou	um	produto	e	quer	vendê-lo	com	lucro	de	45%	se	o	
+valor	 da	 compra	 for	 menor	 que	 20,00;	 caso	 contrário,	 o	 lucro	 será	 de	 30%.	
+Entrar	com	o	valor	do	produto	e	imprimir	o	valor	da	venda.	
+*/
+
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese-brazilian");
+
+    float preco, precoAtualizado;
+    printf("Digite o valor do produto: ");
+	scanf("%f", &preco);
+
+    if(preco < 20){
+        precoAtualizado = preco * 1.45;
+    }else{
+        precoAtualizado = preco * 1.30;
+    }
+
+    printf("O valor a ser cobrado é: R$ %.2f ",precoAtualizado );
+
+}
+
+
+/*
+4-Receber	um	nome	no	teclado	e	imprimir	quantas	letras	"A"	tem	o	nome.
+*/
+
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese-brazilian");
+
+    char nome[50];
+    int qtdLetras = 0;
+    printf("Digite um nome: ");
+	gets(nome);
+
+    for(int i = 0;nome[i] != '\0'; i++){
+        if(nome[i] == 'A' || nome[i] == 'a' ){
+            qtdLetras++;
+        }
+    }
+    printf("O nome %s possui %d letras A",nome,qtdLetras);
+
+	return(0);
+
+}
+
+
+
+
+/*
+5-Ler	uma	temperatura	em	graus	Celsius	e	transformá-la	em	graus	Fahrenheit.
+Formula:	F	=	(9*C+160)/5
+*/
+
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese-brazilian");
+
+    float temp,tempConvertida;
+    printf("Digite uma temperatura em graus Celsius: ");
+    scanf("%f",&temp);
+    
+    tempConvertida = (9 * temp + 160)/5;
+
+    printf("A temperatura %.2f°C equivale a %.2f °Fahrenheit", temp, tempConvertida);
+
+}
+
+
+
+
